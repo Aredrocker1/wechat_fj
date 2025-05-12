@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>我的微信名片</title>
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      text-align: center;
+      /* 使用你提供的背景图片，文件名改为 12.jpg */
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('12.jpg') no-repeat center center fixed;
+      background-size: cover; /* 背景图片覆盖整个页面 */
+      padding: 2em;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95); /* 白色背景，带轻微透明度 */
+      border-radius: 16px;
+      padding: 2.5em;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 更强的阴影 */
+      max-width: 380px;
+      margin: auto;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    h1 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 0.5em;
+      position: relative;
+      display: inline-block;
+    }
+    h1::before {
+      content: '📱';
+      font-size: 1.2em;
+      margin-right: 0.3em;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin: 1em 0;
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.02);
+    }
+    p {
+      margin: 1em 0;
+      color: #666;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.7em 1.5em;
+      background: #07c160;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1em;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    a.button:hover {
+      background: #06b050;
+      transform: translateY(-2px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 400px) {
+      .container {
+        padding: 1.5em;
+        max-width: 90%;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      a.button {
+        padding: 0.6em 1.2em;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>欢迎添加</h1>
+    <img src="qrcode.jpg" alt="微信二维码" />
+    <p>长按识别二维码，添加我为好友</p>
+    <a class="button" href="qrcode.jpg" download>保存二维码</a>
+  </div>
+</body>
+</html>
